@@ -64,6 +64,9 @@ public class StringsAndThings {
             if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g') {
                 happy = true;
                 break;
+            } else if (input.charAt(i) == 'g' && input.charAt(i) != 'g'){
+                happy = false;
+                break;
             }
         }
         return happy;
