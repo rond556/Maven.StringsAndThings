@@ -15,9 +15,14 @@ public class StringsAndThings {
      * countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input) {
+        //create a counter
         int countYZ = 0;
+        //move through a for-each loop, seeking the output after you split by spaces
         for (String splitInput : input.split(" ")) {
+            //seek the number of words that end in y or z
+            //splitInput.charAt(splitInput.length - 1)
             if (splitInput.endsWith("y") || splitInput.endsWith("z")){
+                //add to the counter if they do
                 countYZ++;
             }
         }
@@ -34,6 +39,8 @@ public class StringsAndThings {
      * removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove) {
+        //find all examples of remove, and replace them with nothing
+        //return
         return base.replace(remove, "");
     }
 
@@ -46,8 +53,13 @@ public class StringsAndThings {
      * containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
-        int isCounter = input.split("\\bis").length - 1;
-        int notCounter = input.split("\\bnot").length - 1;
+        //take out each specific occurrence of "is" and "not"
+        //the \\b looks for any occurrence, meaning "is" can be taken out of "this"
+        //with \\b, "this" will be ignored
+        //assign the number of times this happens to an int
+        int isCounter = input.split("\\bis").length;
+        int notCounter = input.split("\\bnot").length;
+        //return if the ints are equal
         return isCounter == notCounter;
     }
 
@@ -61,9 +73,12 @@ public class StringsAndThings {
     public Boolean gIsHappy(String input) {
         boolean happy = false;
         for (int i = 0; i <= input.length() - 2; i++) {
+            //it's a little broken, but you can easily see the number of times
+            //g and g appear in the following method
             if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g') {
                 happy = true;
                 break;
+                //however, even one occurrence of g appearing alone returns false
             } else if (input.charAt(i) == 'g' && input.charAt(i) != 'g'){
                 happy = false;
                 break;
@@ -86,6 +101,7 @@ public class StringsAndThings {
     public Integer countTriple(String input){
         int tripleCounter = 0;
         for(int i = 0; i <= input.length() - 2; i++){
+            //same, it's easy to see if three characters appear in a row with a similar method
             if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)){
             tripleCounter++;
             }
