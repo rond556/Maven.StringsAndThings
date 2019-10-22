@@ -17,7 +17,7 @@ public class StringsAndThings {
     public Integer countYZ(String input) {
         int countYZ = 0;
         for (String splitInput : input.split(" ")) {
-            if (splitInput.charAt(splitInput.length() - 1) == 'y' || splitInput.charAt(splitInput.length() - 1) == 'z') {
+            if (splitInput.endsWith("y") || splitInput.endsWith("z")){
                 countYZ++;
             }
         }
@@ -46,17 +46,8 @@ public class StringsAndThings {
      * containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
-        int isCounter = 0;
-        int notCounter = 0;
-        for (int i = 0; i <= input.length() - 2; i++) {
-            if (input.charAt(i) == 'i' && input.charAt(i + 1) == 's') {
-                isCounter++;
-            }
-        }
-        for (int j = 0; j <= input.length() - 3; j++) {
-            if (input.charAt(j) == 'n' && input.charAt(j + 1) == 'o' && input.charAt(j + 2) == 't')
-                notCounter++;
-            }
+        int isCounter = input.split("\\bis").length - 1;
+        int notCounter = input.split("\\bnot").length - 1;
         return isCounter == notCounter;
     }
 
