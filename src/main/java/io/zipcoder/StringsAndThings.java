@@ -46,18 +46,18 @@ public class StringsAndThings {
      * containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
-        int ifCounter = 0;
+        int isCounter = 0;
         int notCounter = 0;
-        for (int i = 0; i <= input.length() - 1; i++) {
-            if (input.charAt(i) == 'i' && input.charAt(i + 1) == 'f') {
-                ifCounter++;
-            }
-            for (int j = 0; j <= input.length() - 2; j++) {
-                if (input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't')
-                    notCounter++;
+        for (int i = 0; i <= input.length() - 2; i++) {
+            if (input.charAt(i) == 'i' && input.charAt(i + 1) == 's') {
+                isCounter++;
             }
         }
-        return ifCounter == notCounter;
+        for (int j = 0; j <= input.length() - 3; j++) {
+            if (input.charAt(j) == 'n' && input.charAt(j + 1) == 'o' && input.charAt(j + 2) == 't')
+                notCounter++;
+            }
+        return isCounter == notCounter;
     }
 
     /**
