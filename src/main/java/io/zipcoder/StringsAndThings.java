@@ -71,32 +71,20 @@ public class StringsAndThings {
      * gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input) {
-        for (int i = 1; i <= input.length() - 1; i++) {
-            if (input.charAt(i) == ('g') && input.charAt(i) == input.charAt(i - 1)
-                    return false;
-            }
-        }
-        return true;
-    }
-        /*boolean happy = false;
+        boolean happy = false;
         for (int i = 0; i <= input.length() - 2; i++) {
             //it's a little broken, but you can easily see the number of times
             //g and g appear in the following method
             if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g') {
                 happy = true;
-                break;
                 //however, even one occurrence of g appearing alone returns false
-            } else if (input.charAt(i) == 'g' && input.charAt(i) != 'g'){
+            } else if (input.charAt(i) == 'g' && input.charAt(i) != 'g') {
                 happy = false;
                 break;
             }
         }
-        return happy;*/
-
-
-
-
-
+        return happy;
+    }
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
@@ -109,10 +97,10 @@ public class StringsAndThings {
         int tripleCounter = 0;
         for(int i = 0; i <= input.length() - 2; i++){
             //same, it's easy to see if three characters appear in a row with a similar method
-            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)){
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2))
             tripleCounter++;
-            }
         }
         return tripleCounter;
     }
 }
+
