@@ -71,7 +71,14 @@ public class StringsAndThings {
      * gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input) {
-        boolean happy = false;
+        for (int i = 1; i <= input.length() - 1; i++) {
+            if (input.charAt(i) == ('g') && input.charAt(i) == input.charAt(i - 1)
+                    return false;
+            }
+        }
+        return true;
+    }
+        /*boolean happy = false;
         for (int i = 0; i <= input.length() - 2; i++) {
             //it's a little broken, but you can easily see the number of times
             //g and g appear in the following method
@@ -84,8 +91,8 @@ public class StringsAndThings {
                 break;
             }
         }
-        return happy;
-    }
+        return happy;*/
+
 
 
 
