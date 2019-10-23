@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 import org.apache.commons.lang3.StringUtils;
 /**
  * @author tariq
@@ -70,21 +71,62 @@ public class StringsAndThings {
      * gHappy("xxgxx") // Should return  false
      * gHappy("xxggyygxx") // Should return  false
      */
+
+
     public Boolean gIsHappy(String input) {
-        boolean happy = false;
+        /*boolean happy = false;
         for (int i = 0; i <= input.length() - 2; i++) {
             //it's a little broken, but you can easily see the number of times
             //g and g appear in the following method
             if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g') {
                 happy = true;
                 //however, even one occurrence of g appearing alone returns false
-            } else if (input.charAt(i) == 'g' && input.charAt(i) != 'g') {
+            } else if (input.charAt(i) == 'g' && input.charAt(i - 1) != 'g') {
                 happy = false;
                 break;
             }
         }
-        return happy;
+        return happy;*/
+
+        /*//Make a String Builder
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i <= input.length() - 1; i++){
+            //check to see if there are two consecutive g's at the current value
+            if(input.charAt(i) == 'g' && input.charAt(i + 1) == 'g'){
+                //if so, add to the counter to skip it
+                i++;
+            } else {
+                //if not, put it in the string builder
+                sb.append(input.charAt(i));
+            }
+        }
+        //currently, there should be NO occurrences of double g in the string
+        //run through the new String from String Builder
+        for(int i = 0; i <= sb.length(); i++)
+            //if there is one g remaining, return false since it is not happy
+            if(sb.charAt(i) == 'g') {
+                return false;
+                //if there are no g's in the string, return true since you took out all the happy g's
+            } else if (sb.toString().indexOf('g') == -1)
+                return true;
+            //all other cases should return true
+        return true;*/
+
+
+
+        //similarly to the method above, you can use replace all gg's with nothing rather than the first for loop
+
+
+        String replaceString = input.replace("gg","");
+        //run the same for loop above, checking for g's or no g's
+        for(int i = 0; i <= replaceString.length(); i++)
+            if(input.charAt(i) == 'g') {
+                return false;
+            } else if (replaceString.indexOf('g') == -1)
+                return true;
+        return true;
     }
+
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
