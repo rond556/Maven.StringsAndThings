@@ -74,7 +74,8 @@ public class StringsAndThings {
 
 
     public Boolean gIsHappy(String input) {
-        /*boolean happy = false;
+        /*MY ORIGINAL METHOD
+        boolean happy = false;
         for (int i = 0; i <= input.length() - 2; i++) {
             //it's a little broken, but you can easily see the number of times
             //g and g appear in the following method
@@ -88,7 +89,8 @@ public class StringsAndThings {
         }
         return happy;*/
 
-        /*//Make a String Builder
+        /*RETHINKING WITH STRINGBUILDER INSPIRATION FROM MANNY
+        //Make a String Builder
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i <= input.length() - 1; i++){
             //check to see if there are two consecutive g's at the current value
@@ -113,7 +115,7 @@ public class StringsAndThings {
         return true;*/
 
 
-
+        //looked to replace StringBuilder with a simple replace command
         //similarly to the method above, you can use replace all gg's with nothing rather than the first for loop
 
 
